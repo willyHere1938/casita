@@ -4,9 +4,9 @@ sala
 CARLOS ARTURO MORENO SUSATAMA
 
 ## Intergrantes
-  * Integrante 1
-  * Integrante 2
-  * Integrante 3 
+  * Integrante 1 yo
+  * Integrante 2 yo
+  * Integrante 3 yo
 
 ## LOS PROPIOS KOMANDOS
 git pull (informacion actualizada)
