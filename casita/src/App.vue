@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import MenuPrincipal from './components/Menu.vue'
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import MenuPrincipal from './components/Menu.vue'
 
     <MenuPrincipal/>
     <HelloWorld/>
-    
+    <Footer/>
   </div>
   
 </template>
