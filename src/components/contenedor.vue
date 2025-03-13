@@ -1,7 +1,8 @@
 <template>
-    <div class="primer_diseño">
+    <!--<div class="primer_diseño">
         <p>Mi primer parrafo afgnEJIFNJGNegjirgmnqJIGNEROGJNejigrnj</p>
     </div>
+    -->
     <div id="form" class="container">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nombre y apellido</label>

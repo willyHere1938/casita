@@ -1,7 +1,7 @@
 <script setup>
-//import HelloWorld from './components/HelloWorld.vue'
-//import MenuPrincipal from './components/Menu.vue'
-//import Footer from './components/Footer.vue';
+import HelloWorld from './components/HelloWorld.vue'
+import MenuPrincipal from './components/Menu.vue'
+import Footer from './components/Footer.vue';
 import contenedorEjemplo from './components/contenedor.vue';
 </script>
 
