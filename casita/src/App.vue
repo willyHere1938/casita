@@ -14,6 +14,8 @@ import Footer from './components/Footer.vue';
   
 </template>
 
-<style scoped>
-
+<style>
+  body {
+  background-color: #000000; /* Color gris claro */
+}
 </style>
