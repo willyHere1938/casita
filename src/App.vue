@@ -1,7 +1,8 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import MenuPrincipal from './components/Menu.vue'
-import Footer from './components/Footer.vue';
+//import HelloWorld from './components/HelloWorld.vue'
+//import MenuPrincipal from './components/Menu.vue'
+//import Footer from './components/Footer.vue';
+import contenedorEjemplo from './components/contenedor.vue';
 </script>
 
 <template>
@@ -10,12 +11,13 @@ import Footer from './components/Footer.vue';
     <MenuPrincipal/>
     <HelloWorld/>
     <Footer/>
+    <contenedorEjemplo></contenedorEjemplo>
+  
+
   </div>
   
 </template>
 
-<style>
-  body {
-  background-color: #000000; /* Color gris claro */
-}
+<style scoped>
+  
 </style>
