@@ -1,3 +1,15 @@
+-- 1. Modificar el método de autenticación de los usuarios
+ALTER USER 'senior_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'contraseña_senior';
+ALTER USER 'junior_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'contraseña_junior';
+
+-- 2. Volver a aplicar los privilegios (según tu base de datos 'denuncia')
+-- Nota: Esto es solo un paso de seguridad para asegurar que los permisos sigan ahí.
+GRANT ALL PRIVILEGES ON denuncia.* TO 'senior_user'@'localhost';
+GRANT SELECT, UPDATE (Estado) ON denuncia.DENUNCIA TO 'junior_user'@'localhost';
+GRANT SELECT ON denuncia.CATEGORIA TO 'junior_user'@'localhost';
+
+-- 3. Aplicar y recargar todos los cambios de inmediato
+FLUSH PRIVILEGES;
 # casita
 sala
 ## El maistro
