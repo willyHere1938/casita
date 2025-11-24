@@ -1,14 +1,31 @@
--- 1. Modificar el método de autenticación de los usuarios
-ALTER USER 'senior_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'contraseña_senior';
-ALTER USER 'junior_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'contraseña_junior';
+-- 1. Borramos usuarios previos para evitar conflictos
+DROP USER IF EXISTS 'junior_user'@'localhost';
+DROP USER IF EXISTS 'senior_user'@'localhost';
 
--- 2. Volver a aplicar los privilegios (según tu base de datos 'denuncia')
--- Nota: Esto es solo un paso de seguridad para asegurar que los permisos sigan ahí.
+FLUSH PRIVILEGES;
+
+-- 2. Creamos los usuarios de nuevo
+CREATE USER 'senior_user'@'localhost' IDENTIFIED BY 'contraseña_senior';
+CREATE USER 'junior_user'@'localhost' IDENTIFIED BY 'contraseña_junior';
+
+-- 3. Asignamos los permisos USANDO EL NOMBRE REAL DE TU BASE DE DATOS: 'denuncia'
+
+-- === PERMISOS SENIOR ===
+-- Le damos permiso en la base de datos 'denuncia', a todas las tablas (*)
 GRANT ALL PRIVILEGES ON denuncia.* TO 'senior_user'@'localhost';
-GRANT SELECT, UPDATE (Estado) ON denuncia.DENUNCIA TO 'junior_user'@'localhost';
+
+
+-- === PERMISOS JUNIOR ===
+-- Le damos permiso en la base de datos 'denuncia', tabla 'DENUNCIA'
+GRANT SELECT ON denuncia.DENUNCIA TO 'junior_user'@'localhost';
+
+-- Le damos permiso en la base de datos 'denuncia', tabla 'CATEGORIA'
 GRANT SELECT ON denuncia.CATEGORIA TO 'junior_user'@'localhost';
 
--- 3. Aplicar y recargar todos los cambios de inmediato
+-- Le damos permiso de actualizar ESTADO en la base de datos 'denuncia', tabla 'DENUNCIA'
+GRANT UPDATE (Estado) ON denuncia.DENUNCIA TO 'junior_user'@'localhost';
+
+-- 4. Guardamos cambios
 FLUSH PRIVILEGES;
 # casita
 sala
